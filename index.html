@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="CSS/all.min.css" />
+    <link rel="stylesheet" href="CSS/bootstrap.min.css" />
+    <link rel="stylesheet" href="CSS/style.css" />
+    <title>Weather</title>
+  </head>
+  <body>
+   
+    <nav
+      class="navbar navbar-expand-lg background-color pt-1 pt-md-5 pb-1 pb-md-5"
+      data-bs-theme="dark"
+    >
+      <div class="container">
+        <i class="fa-solid fa-cloud-sun fa-2x me-4"></i>
+        <a class="navbar-brand" href="#">Weather</a>
+        <div
+          class="collapse navbar-collapse d-flex justify-content-end"
+          id="navbarSupportedContent"
+        >
+          <div class="navitems">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+              <li class="nav-item me-5">
+                <a
+                  class="nav-link active home-button ps-4 pe-4 pt-1 pb-1"
+                  aria-current="page"
+                  href="#"
+                  >Home</a
+                >
+              </li>
+              <li class="nav-item me-5">
+                <a
+                  class="nav-link button-style text-white ps-4 pe-4 pt-1 pb-1"
+                  href="#"
+                  >News</a
+                >
+              </li>
+              <li class="nav-item me-5">
+                <a
+                  class="nav-link button-style text-white ps-4 pe-4 pt-1 pb-1"
+                  href="#"
+                  >Live Cameras</a
+                >
+              </li>
+              <li class="nav-item me-5">
+                <a
+                  class="nav-link button-style text-white ps-4 pe-4 pt-1 pb-1"
+                  href="#"
+                  >Photos</a
+                >
+              </li>
+              <li class="nav-item me-5">
+                <a
+                  class="nav-link button-style text-white ps-4 pe-4 pt-1 pb-1"
+                  href="#"
+                  >Contacts</a
+                >
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </nav>
+
+    <div class="background position-relative">
+      <div class="search container ps-5 pe-5">
+        <div class="input-group mb-3 pt-5">
+          <input
+            id="city"
+            oninput="getWeather()"
+            type="text"
+            class="form-control background-color text-white border-0 white-placeholder pt-3 pb-3 rounded-5"
+            placeholder="Your Location..."
+            aria-label="Recipient's username"
+            aria-describedby="button-addon2"
+          />
+          <button
+            class="btn btn-primary rounded-4 ps-4 pe-4 pt-0 pb-0 ms-3"
+            type="button"
+            id="button-addon2"
+          >
+            Find
+          </button>
+        </div>
+      </div>
+      <div
+        class="display-container container position-absolute top-100 start-50 translate-middle"
+      >
+        <div id="rowData" class="row g-0">
+          <div class="col-md-4">
+            <div class="card border-0">
+              <div
+                id="day1"
+                class="card-header text-white card-head1 text-center border-0"
+              ></div>
+              <div class="card-body card-body1 text-white border-0">
+                <h5 id="feen" class="card-title"></h5>
+                <p id="temp1" class="card-text display-1 fw-bolder"></p>
+                <p id="status1" class="card-text"></p>
+                <div class="row">
+                  <div
+                    class="col-md-4 d-flex justify-content-center align-items-center gap-1"
+                  >
+                    <i class="fa-solid fa-umbrella"></i>
+                    <p id="rain" class="card-text"></p>
+                  </div>
+                  <div
+                    class="col-md-4 d-flex justify-content-center align-items-center gap-1"
+                  >
+                    <i class="fa-solid fa-wind"></i>
+                    <p id="wind" class="card-text"></p>
+                  </div>
+                  <div
+                    class="col-md-4 d-flex justify-content-center align-items-center gap-1"
+                  >
+                    <i class="fa-solid fa-droplet"></i>
+                    <p id="humidity" class="card-text"></p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="card border-0">
+              <div
+                id="day2"
+                class="card-header card-head2 text-white border-0 text-center"
+              ></div>
+              <div
+                class="card-body card-body2 text-white text-center d-flex flex-column justify-content-center align-items-center"
+              >
+                <h5 id="temp2Max" class="card-title"></h5>
+                <p id="temp2Min" class="card-text"></p>
+                <p id="status2" class="card-text"></p>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="card border-0">
+              <div
+                id="day3"
+                class="card-header card-head1 text-white border-0 text-center"
+              ></div>
+              <div
+                class="card-body card-body1 text-white text-center d-flex flex-column justify-content-center align-items-center"
+              >
+                <h5 id="temp3Max" class="card-title"></h5>
+                <p id="temp3Min" class="card-text"></p>
+                <p id="status3" class="card-text"></p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="dark-back background-color"></div>
+    <footer class="footer-back">
+      <div
+        class="contact d-flex justify-content-center align-items-center container gap-5"
+      >
+        <div class="subscribe mt-5 me-5 w-50">
+          <div class="input-group sbs mb-3">
+            <input
+              type="text"
+              class="form-control w-75 background-color text-white border-0 white-placeholder"
+              placeholder="Enter Your Email..."
+              aria-label="Recipient's username"
+              aria-describedby="button-addon2"
+            />
+            <button
+              class="btn btn-primary rounded-2"
+              type="button"
+              id="button-addon2"
+            >
+              Subscribe
+            </button>
+          </div>
+        </div>
+        <div class="social mt-4 ms-5">
+          <button
+            type="button"
+            class="btn btn-dark rounded-circle social-button-bg"
+          >
+            <i class="fa-brands fa-facebook-f fa-bounce social-button"></i>
+          </button>
+          <button
+            type="button"
+            class="btn btn-dark rounded-circle social-button-bg"
+          >
+            <i class="fa-brands fa-twitter fa-bounce social-button"></i>
+          </button>
+          <button
+            type="button"
+            class="btn btn-dark rounded-circle social-button-bg"
+          >
+            <i class="fa-brands fa-instagram fa-bounce social-button"></i>
+          </button>
+          <button
+            type="button"
+            class="btn btn-dark rounded-circle social-button-bg"
+          >
+            <i class="fa-brands fa-pinterest-p fa-bounce social-button"></i>
+          </button>
+        </div>
+      </div>
+      <p class="text-center text-white-50 mt-4">
+        Copyright 2014 Company name. Designed by Themezy. All rights reserved
+      </p>
+    </footer>
+
+    <script src="JS/bootstrap.bundle.min.js"></script>
+    <script src="JS/script.js"></script>
+  </body>
+</html>

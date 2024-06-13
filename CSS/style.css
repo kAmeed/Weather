@@ -1,0 +1,136 @@
+.background-color{
+    background-color: #1E202B !important;
+}
+
+i{
+    color: white !important;
+}
+.button-style {
+    color: white !important;
+    border: 1px solid transparent !important; 
+    border-radius: 20px !important;
+}
+
+.button-style:hover {
+    border-color: rgb(4, 209, 228) !important;
+    color:rgb(4, 209, 228) !important;
+}
+.home-button{
+    border-color: rgb(4, 209, 228) !important;
+    color:rgb(4, 209, 228) !important;
+    border: 1px solid rgb(4, 209, 228)  !important; 
+    border-radius: 20px !important;
+}
+.background{
+    background-image: url(../Assets/banner.png);
+    min-height: 350px;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.white-placeholder::placeholder {
+        color: rgba(255, 255, 255, 0.41) !important;
+}
+.card-body{
+    height: 300px !important;
+}
+.card-head1{
+    background-color: #2D303D !important;
+}
+.card-body1{
+    background-color: #323544 !important;
+}
+.card-head2{
+    background-color: #222530 !important;
+}
+.card-body2{
+    background-color: #262936 !important;
+}
+.dark-back{
+    height: 210px;
+}
+footer{
+    height: 205px;
+}
+.footer-back{
+    background-color: #262936 !important;
+}
+.social-button{
+    color:rgb(4, 209, 228) !important;
+}
+.social-button-bg{
+    background-color: #1E202B !important;
+}
+.social-button-bg:hover{
+    background-color: rgb(4, 209, 228) !important;
+}
+.social-button-bg:hover .social-button{
+    color:white !important;}
+
+    @media (max-width: 768px) {
+        .navbar {
+          padding-top: 0.5rem !important;
+          padding-bottom: 0.5rem !important;
+        }
+      
+        .navbar-brand {
+          margin-right: 0 !important;
+        }
+      
+        .navbar-toggler {
+          margin-left: auto !important;
+        }
+      
+        .navbar-collapse {
+          flex-basis: 100%;
+          justify-content: center;
+        }
+      
+        .navbar-nav {
+          margin-top: 1rem;
+          flex-direction: column;
+          align-items: center;
+        }
+      
+        .nav-item {
+          margin-right: 0 !important;
+          margin-bottom: 0.5rem;
+        }
+      
+        .search {
+          padding: 0 1rem;
+        }
+      
+        .card {
+          margin-bottom: 1rem;
+        }
+        .display-container{
+            margin-top: 300px;
+        }
+        .navitems{
+            margin: auto !important;
+        }
+        .dark-back{
+            height: 900px !important;
+        }
+        .contact{
+            flex-direction: column !important;
+        }
+        .footer-back{
+            height: 400px !important;
+        }
+        .social{
+            margin-left: 0 !important;
+        }
+        .subscribe{
+            margin-right: 0 !important;
+        }
+       .sbs{
+        display: flex !important;
+        flex-direction: column !important;
+       }
+       .subscribe input{
+        width: 100% !important;
+        margin-bottom: 10px;
+       }
+      }
+      
