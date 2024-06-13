@@ -20,14 +20,14 @@ let weather = [];
 async function getWeather() {
     try {
         let newcity=city.value;
-        let response = await fetch(`http://api.weatherapi.com/v1/forecast.json?key=2b9ba31cd79c4ed7b34155549241306&q=${newcity}&days=3&aqi=no&alerts=no`);
+        let response = await fetch(`https://api.weatherapi.com/v1/forecast.json?key=2b9ba31cd79c4ed7b34155549241306&q=${newcity}&days=3&aqi=no&alerts=no`);
         let data = await response.json();
         weather = data.forecast.forecastday;
         makan=data.location.name;
         displayWeather();
     } catch (error) {
         console.error(error);
-        let response = await fetch(`http://api.weatherapi.com/v1/forecast.json?key=2b9ba31cd79c4ed7b34155549241306&q=cairo&days=3&aqi=no&alerts=no`);
+        let response = await fetch(`https://api.weatherapi.com/v1/forecast.json?key=2b9ba31cd79c4ed7b34155549241306&q=cairo&days=3&aqi=no&alerts=no`);
         let data = await response.json();
         weather = data.forecast.forecastday;
         makan=data.location.name;
